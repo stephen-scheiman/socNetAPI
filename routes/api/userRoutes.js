@@ -1,4 +1,4 @@
-const router = require("express").Router;
+const router = require("express").Router();
 
 const {
   getUsers,
@@ -12,7 +12,7 @@ const {
 router.route("/").get(getUsers).post(createUser);
 
 // /api/users/:userId
-router.router("/:userId").get(getOneUser).delete(deleteUser).update(updateUser);
+router.route("/:userId").get(getOneUser).delete(deleteUser);
 
 
 

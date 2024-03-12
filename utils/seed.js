@@ -18,10 +18,13 @@ connection.once('open', async () => {
     const fullName = getRandomName();
     const first = fullName.split(' ')[0];
     const last = fullName.split(' ')[1];
+    const email= first + '.' + last + '@example.com';
+    console.log(email);
 
     users.push({
       first,
       last,
+      email,
     });
   }
 

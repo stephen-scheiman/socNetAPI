@@ -8,11 +8,12 @@ module.exports = {
       const users = await User.find();
       res.json(users);
     } catch (err) {
+      console.log(err);
       res.status(500).json(err);
     }
   },
   // Get one user by ID
-  async getOneUser (req, res) {
+  async getOneUser(req, res) {
     try {
       const user = await User.findOne({ _id: req.params.userId }).select(
         "-__v"
