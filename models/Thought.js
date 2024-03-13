@@ -2,10 +2,6 @@ const { Schema, model } = require("mongoose");
 
 const thoughtSchema = new Schema(
   {
-    thoughtId: {
-      type: Schema.Types.ObjectId,
-      default: () => new Types.ObjectId(),
-    },
     thoughtText: {
       type: String,
       require: true,
@@ -15,6 +11,10 @@ const thoughtSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
+      get: function (date) {
+        if (date) return;
+        date.toIsoString().split("T")[0];
+      },
     },
     username: {
       type: String,
