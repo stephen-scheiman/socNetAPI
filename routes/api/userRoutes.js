@@ -1,5 +1,5 @@
 const router = require("express").Router();
-
+// Import and destructure our user ops functions
 const {
   getUsers,
   getOneUser,
@@ -8,14 +8,10 @@ const {
   updateUser
 } = require("../../controllers/userController");
 
-// /api/users
+// /api/users  root route ops
 router.route("/").get(getUsers).post(createUser);
 
-// /api/users/:userId
-router.route("/:userId").get(getOneUser).delete(deleteUser);
-
-
-
-
+// /api/users/:userId  by ID ops
+router.route("/:userId").get(getOneUser).put(updateUser).delete(deleteUser);
 
 module.exports = router;
