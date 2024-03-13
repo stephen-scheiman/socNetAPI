@@ -7,6 +7,10 @@ const validateEmail = function (email) {
 
 const userSchema = new Schema(
   {
+    userId: {
+      type: Schema.Types.ObjectId,
+      default: () => new Types.ObjectId(),
+    },
     username: {
       type: String,
       unique: true,
@@ -28,6 +32,7 @@ const userSchema = new Schema(
     toJSON: {
       virtuals: true,
     },
+    id: false,
   }
 );
 
