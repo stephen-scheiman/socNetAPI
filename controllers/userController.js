@@ -96,8 +96,9 @@ module.exports = {
         return res.status(404).json({ message: "No user with this id!" });
       }
 
-      res.json({ message: "Friend deleted" });
+      res.json({ message: `Friend deleted` });
     } catch (err) {
+      console.log(err);
       res.status(500).json(err);
     }
   },
