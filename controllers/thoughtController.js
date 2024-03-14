@@ -5,7 +5,7 @@ module.exports = {
   // Get all thoughts
   async getThoughts(req, res) {
     try {
-      const thoughts = await Thought.find();
+      const thoughts = await Thought.find().populate('reactions');
       res.json(thoughts);
     } catch (err) {
       console.log(err);
@@ -17,7 +17,7 @@ module.exports = {
     try {
       const thought = await Thought.findOne({ _id: req.params.thoughtId }).select(
         "-__v"
-      );
+      ).populate('reactions');
 
       if (!thought) {
         return res.status(404).json({ message: "No thought with that ID" });
