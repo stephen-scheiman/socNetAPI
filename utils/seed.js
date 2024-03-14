@@ -19,9 +19,9 @@ connection.once("open", async () => {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
   const thoughts = [];
 
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 5; i++) {
     const fullName = getRandomName();
-    const firstInitial = fullName.split(" ")[0].slice(0,1);
+    const firstInitial = fullName.split(" ")[0].slice(0, 1);
     const first = fullName.split(" ")[0];
     const last = fullName.split(" ")[1];
     const username = firstInitial.toLowerCase() + last.toLowerCase();
