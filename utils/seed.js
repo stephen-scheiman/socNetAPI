@@ -24,15 +24,15 @@ connection.once("open", async () => {
     const firstInitial = fullName.split(" ")[0].slice(0,1);
     const first = fullName.split(" ")[0];
     const last = fullName.split(" ")[1];
-    const userName = firstInitial.toLowerCase() + last.toLowerCase();
+    const username = firstInitial.toLowerCase() + last.toLowerCase();
     const email = first + "." + last + "@example.com";
 
     users.push({
-      userName,
+      username,
       email,
     });
 
-    thoughts.push({ thoughtText, userName });
+    thoughts.push({ thoughtText, username });
   }
 
   await User.collection.insertMany(users);
