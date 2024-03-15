@@ -51,4 +51,4 @@ PropertyPlus Care is licensed under the MIT License. See the [LICENSE](LICENSE) 
 https://github.com/stephen-scheiman/socNetAPI
 
 ## Application Demo Video
-https://drive.google.com/file/d/1SKFY8ev51--Viz9gE704UYe7-iwxL0eZ/view
+https://watch.screencastify.com/v/mBh5iKYf3eBRem7yEcEH
