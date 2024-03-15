@@ -13,15 +13,15 @@ socNetAPI is model and controller for the backend of a social networking applica
 
 ## Getting Started
 
-To get started with socnetAPI, follow these steps:
+To get started with socNetAPI, follow these steps:
 
-1. **Clone the Repository:** Clone the socnetAPI repository to your local machine using Git:
+1. **Clone the Repository:** Clone the socNetAPI repository to your local machine using Git:
 ```
-git clone https://github.com/stephen-scheiman/socnetAPI.git
+git clone https://github.com/stephen-scheiman/socNetAPI.git
 ```
 2. **Install Dependencies:** Navigate to the project directory and install dependencies using npm:
 ```
-cd socnetAPI
+cd socNetAPI
 npm install
 ```
 3. **Run the Application:** Start the application locally using npm:
@@ -33,7 +33,7 @@ npm start
 
 ## Contributing
 
-We welcome contributions from the community to enhance and improve socnetAPI. To contribute, please follow these guidelines:
+We welcome contributions from the community to enhance and improve socNetAPI. To contribute, please follow these guidelines:
 
 - Fork the repository and create a new branch for your feature or bug fix.
 - Ensure your code adheres to the coding standards and conventions used in the project.
@@ -48,7 +48,7 @@ If you encounter any issues or have any questions or suggestions, please don't h
 PropertyPlus Care is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
 ## Application Repository
-https://github.com/stephen-scheiman/socnetAPI
+https://github.com/stephen-scheiman/socNetAPI
 
 ## Application Demo Video
 https://drive.google.com/file/d/1SKFY8ev51--Viz9gE704UYe7-iwxL0eZ/view
