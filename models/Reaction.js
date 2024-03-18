@@ -1,4 +1,5 @@
 const { Schema } = require("mongoose");
+const dayjs = require("dayjs");
 
 const reactionSchema = new Schema({
   reactionBody: {
@@ -12,13 +13,9 @@ const reactionSchema = new Schema({
   },
   createdAt: {
     type: Date,
-    default: Date.now,
-    get: function (date) {
-      if (date) return;
-      date.toIsoString().split("T")[0];
-    },
+    default: dayjs(),
+    get: (date) => dayjs(date).format("dddd, MMMM D, YYYY h:mm A"),
   },
 });
-
 
 module.exports = reactionSchema;

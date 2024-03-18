@@ -37,8 +37,16 @@ module.exports = {
         { $addToSet: { thoughts: thought._id } },
         { new: true }
       );
-      res.json(thought);
+  
+      if (!user) {
+        return res.status(404).json({
+          message: 'Thought created, but found no user with that ID',
+        })
+      }
+
+      res.json('Created the thought 🎉');
     } catch (err) {
+      console.log(err);
       res.status(500).json(err);
     }
   },
@@ -50,7 +58,19 @@ module.exports = {
       if (!thought) {
         return res.status(404).json({ message: "No thought with that ID" });
       }
-      res.json({ message: "Thought deleted" });
+      const user = await User.findOneAndUpdate(
+        { thoughts: req.params.thoughtId },
+        { $pull: { thoughts: req.params.thoughtId } },
+        { new: true }
+      );
+
+      if (!user) {
+        return res.status(404).json({
+          message: 'Thought deleted but no user with this id!',
+        });
+      }
+
+      res.json({ message: 'Thought successfully deleted!' });
     } catch (err) {
       res.status(500).json(err);
     }

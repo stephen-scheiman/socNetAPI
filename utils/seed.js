@@ -8,16 +8,20 @@ connection.once("open", async () => {
   console.log("connected");
   // Delete the collections if they exist
   let userCheck = await connection.db
-    .listCollections({ name: "users" })
+    .listCollections()
     .toArray();
+    console.log(userCheck.length);
   if (userCheck.length) {
     await connection.dropCollection("users");
+    await connection.dropCollection("thoughts");
   }
 
   const users = [];
   const thoughtText =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
   const thoughts = [];
+
+
 
   for (let i = 0; i < 5; i++) {
     const fullName = getRandomName();
